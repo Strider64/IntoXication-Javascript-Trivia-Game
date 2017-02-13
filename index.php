@@ -17,6 +17,10 @@ Revised: February 12, 2017
     </head>
     <body>
         <div id="container">
+            <div id="heading">
+                <h1>Trivia<span id="toxic">IntoXication</span></h1>
+                <h2 id="subheading">Don't Drive Drunk, Play this Game Instead!</h2>
+            </div>
         </div>
         <script src="lib/js/trivia.js"></script>
     </body>
