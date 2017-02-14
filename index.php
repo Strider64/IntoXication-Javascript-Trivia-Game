@@ -16,8 +16,6 @@ Revised: February 13, 2017
         <link rel="stylesheet" href="lib/css/stylesheet.css">
     </head>
     <body>
-
-
         <div id="container">
             <div id="heading">
                 <h1>Trivia<span id="toxic">IntoXication</span></h1>
@@ -30,7 +28,9 @@ Revised: February 13, 2017
             </div>
             </noscript>
         </div>
-
+        <div id="myFooter">
+            <p class="footer-text">&copy;<?php echo date("Y"); ?> John R. Pepp</p>
+        </div>
         <script src="lib/js/trivia.js"></script>
     </body>
 </html>
