@@ -222,7 +222,7 @@ p, td {
         outline: none;
         display: block;
         width: 100%;
-        max-width: 80px;
+        max-width: 150px;
         height: 25px;
         cursor: pointer;
         background-color: #336699;
