@@ -29,7 +29,9 @@ footer, header, hgroup, menu, nav, section {
     display: block; }
 
 body {
-    line-height: 1; }
+    background-color: #F5E9BE;
+    line-height: 1; 
+}
 
 ol, ul {
     list-style: none; }
@@ -116,9 +118,337 @@ p, td {
 
 /* SMARTPHONE STYLING */
 @media only screen and (max-width: 480px) {
+    div#container {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        background-color: #F5E9BE;
+        padding: 0;
+        margin: 0; 
+    }
+
+
+
+    /*******************************************
+    HEADING CSS STYLING
+    ********************************************/
+    div#heading {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 60px;
+        background-color: #2E2E2E;
+        text-align: center;
+        line-height: 30px;
+        padding: 0;
+        margin: 0;
+    }
+    div#heading h1 {
+        font-size: 1.0rem;
+        color: #fff; 
+    }
+    div#heading h1 span#toxic {
+        font-size: 1.2rem;
+        color: #F19F4D; 
+    }
+    div#heading h2#subheading {
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.8rem;
+        line-height: 1.0;
+        color: lightgreen;
+        font-style: italic; 
+    }
+
+    /*******************************************
+    Game CSS STYLING
+    ********************************************/
+    [id^="mainGame"] {
+        display: none;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border: none;
+        border: 1px solid #2e2e2e;
+        background-color: #D9D9D9;
+        padding: 0;
+        margin: 0;
+    }
+    [id^="mainGame"] div.screen {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 140px;
+        background-color: #fff;
+        padding: 5px 10px;
+        margin: 0px;
+    }   
+    [id^="mainGame"] div.screen h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        line-height: 1.5;
+        color: #336699;
+    }   
+    [id^="mainGame"] .buttonStyle {
+        display: block;
+        width: 100%;
+        height: 50px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border-top: 3px solid #2e2e2e;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-align: left;
+        padding-left: 10px;
+        margin: 0;
+    }  
+    [id^="mainGame"] [id^="scoring"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 30px;
+        border-top: 1px solid #2e2e2e;
+        background-color: #F19F4D;
+    } 
+    [id^="mainGame"] [id^="scoring"] [id^="score"] {
+        position: absolute;
+        top: 7px;
+        left: 10px;
+        font-size: 0.8rem;
+        color: #fff;
+    }   
+    [id^="mainGame"] [id^="scoring"] [id^="percent"] {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        font-size: 0.8rem;
+        color: #fff;
+    }
+    [id^="mainGame"] [id^="record"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 50px;
+        border-top: 1px solid #2e2e2e;
+        background-color: #fff;
+        padding: 0;
+    }    
+    [id^="mainGame"] [id^="record"] [id^="clock"] {
+        position: absolute;
+        top: 18px;
+        left: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: green;
+    }
+
+    [id^="mainGame"] [id^="record"] .nextBtn {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        border: none;
+        outline: none;
+        display: block;
+        width: 100%;
+        max-width: 150px;
+        height: 25px;
+        cursor: pointer;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-transform: capitalize;
+    }  
+    #myFooter {
+        clear: both;
+        display: block;
+        width: 100%;
+        height: 40px;
+        background-color: #000;
+        text-align: center;
+        margin: 0;
+    }
+    #myFooter p {
+        font-size: 1.0rem;
+        line-height: 40px;
+        color: #fff; 
+    }     
 }
 /* TABLET STYLING */
 @media only screen and (min-width: 481px) and (max-width: 977px) {
+    body {
+        background-color: #F5E9BE;
+    }
+    div#container {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #F5E9BE;
+        padding: 0;
+        margin: 0; 
+    }  
+    /*******************************************
+    HEADING CSS STYLING
+    ********************************************/
+    div#heading {
+        display: block;
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+        min-height: 125px;
+        background-color: #2E2E2E;
+        text-align: center;
+        padding: 1.250rem;
+        margin: 0 auto;
+    }
+    div#heading h1 {
+        font-size: 2.4rem;
+        color: #fff; 
+    }
+    div#heading h1 span#toxic {
+        font-size: 3.2rem;
+        color: #F19F4D; 
+    }
+    div#heading h2#subheading {
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: lightgreen;
+        font-style: italic; 
+    }
+
+    [id^="mainGame"] {
+        display: none;
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border: none;
+        background-color: #D9D9D9;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    [id^="mainGame"] div.screen {
+        display: block;
+        width: 100%;
+        height: 125px;
+        background-color: #fff;
+        padding: 20px 20px;
+        margin: 0px;
+    }
+
+    [id^="mainGame"] div.screen h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        line-height: 1.5;
+        color: #336699;
+    }
+
+    [id^="mainGame"] .buttonStyle {
+        display: block;
+        width: 100%;
+        height: 50px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border-top: 3px solid #2e2e2e;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-align: left;
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    [id^="mainGame"] .buttonStyle:hover  {
+        background-color: #000;
+    }
+
+    [id^="mainGame"] [id^="scoring"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 40px;
+        border-top: 3px solid #2e2e2e;
+        background-color: #F19F4D;
+    }
+
+    [id^="mainGame"] [id^="scoring"] [id^="score"] {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        color: #fff;
+    }
+
+    [id^="mainGame"] [id^="scoring"] [id^="percent"] {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #fff;
+    }
+
+    [id^="mainGame"] [id^="record"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 40px;
+        border-top: 3px solid #2e2e2e;
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    [id^="mainGame"] [id^="record"] [id^="clock"] {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: green;
+    }
+
+    [id^="mainGame"] [id^="record"] .nextBtn {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        border: none;
+        outline: none;
+        display: block;
+        width: 100%;
+        max-width: 150px;
+        height: 25px;
+        cursor: pointer;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-transform: capitalize;
+    }
+
+    [id^="mainGame"] [id^="record"] .nextBtn:hover {
+        background-color: green;
+        color: #fff;
+    }    
+
+    #myFooter {
+        clear: both;
+        display: block;
+        width: 600px;
+        height: 50px;
+        background-color: #000;
+        text-align: center;
+        margin: 0 auto 20px;
+    }
+    #myFooter p {
+        font-size: 1.2rem;
+        line-height: 40px;
+        color: #fff; 
+    }     
 }
 @media only screen and (min-width: 978px) {
     div#container {
@@ -131,6 +461,7 @@ p, td {
         margin: 20px auto 0; 
     }
 
+    
     /*******************************************
     HEADING CSS STYLING
     ********************************************/
