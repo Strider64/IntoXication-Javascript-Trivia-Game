@@ -128,7 +128,8 @@ p, td {
         height: 100%;
         background-color: #F5E9BE;
         padding: 0;
-        margin: 20px auto; }
+        margin: 20px auto 0; 
+    }
 
     /*******************************************
     HEADING CSS STYLING
@@ -281,7 +282,7 @@ p, td {
         height: 500px;
         background-color: lightgray;
         padding: 20px;
-        margin-bottom: 10px; }
+    }
     div#info p {
         font-size: 1.2rem;
         line-height: 1.5;
@@ -294,7 +295,8 @@ p, td {
         height: 50px;
         background-color: #000;
         text-align: center;
-        margin-top: 10px; }
+        margin: 0 auto;
+    }
     #myFooter p {
         font-size: 1.2rem;
         line-height: 40px;
