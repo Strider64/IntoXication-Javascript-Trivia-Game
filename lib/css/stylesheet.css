@@ -87,7 +87,7 @@ p, td {
 
 /* SMARTPHONE STYLING */
 @media only screen and (max-width: 480px) {
- }
+}
 /* TABLET STYLING */
 @media only screen and (min-width: 481px) and (max-width: 977px) {
 }
@@ -178,7 +178,7 @@ p, td {
     [id^="mainGame"] .buttonStyle:hover  {
         background-color: #000;
     }
-    
+
     [id^="mainGame"] [id^="scoring"] {
         position: relative;
         display: block;
@@ -187,14 +187,21 @@ p, td {
         border-top: 3px solid #2e2e2e;
         background-color: #F19F4D;
     }
-    
+
     [id^="mainGame"] [id^="scoring"] [id^="score"] {
-       position: absolute;
-       top: 10px;
-       left: 10px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
         color: #fff;
     }
-    
+
+    [id^="mainGame"] [id^="scoring"] [id^="percent"] {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #fff;
+    }
+
     [id^="mainGame"] [id^="record"] {
         position: relative;
         display: block;
