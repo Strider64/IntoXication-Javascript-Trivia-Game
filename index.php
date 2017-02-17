@@ -6,7 +6,7 @@ require_once 'lib/includes/utilities.inc.php';
 Trivia Game Version 2.02 beta with XML;
 by John Pepp
 Started: January 31, 2017
-Revised: February 13, 2017
+Revised: February 16, 2017
 -->
 <html lang="en">
     <head>
@@ -17,7 +17,7 @@ Revised: February 13, 2017
         <link rel="stylesheet" href="lib/css/stylesheet.css">
     </head>
     <body>
-        <div id="container">
+        <div id="container" >
             <div id="heading">
                 <h1>Trivia<span id="toxic">IntoXication</span></h1>
                 <h2 id="subheading">Don't Drive Drunk, Play this Game Instead!</h2>
@@ -28,6 +28,14 @@ Revised: February 13, 2017
                 <a href="https://www.pepster.com" title="Pepster's Place Website">https://www.pepster.com</a>
             </div>
             </noscript>
+            <form id="categories-form" action="totalRecords.php" method="post">
+                <select id="category" name="category">
+                    <option value="movie">movie</option>
+                    <option value="space">space</option>
+                </select>
+                <input id="submitBtn" type="submit" name="submit" value="submit">
+            </form>            
+
         </div>
         <div id="myFooter">
             <p class="footer-text">&copy;<?php echo date("Y"); ?> John R. Pepp</p>
