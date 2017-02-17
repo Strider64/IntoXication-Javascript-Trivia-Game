@@ -29,6 +29,7 @@ Revised: February 16, 2017
             </div>
             </noscript>
             <form id="categories-form" action="totalRecords.php" method="post">
+                <label for="category">Select a Trivia Category</label>
                 <select id="category" name="category">
                     <option value="movie">movie</option>
                     <option value="space">space</option>
