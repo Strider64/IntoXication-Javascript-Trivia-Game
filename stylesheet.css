@@ -1,0 +1,688 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Raleway");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, textarea, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block; }
+
+body {
+    background-color: #F5E9BE;
+    line-height: 1; 
+}
+
+ol, ul {
+    list-style: none; }
+
+blockquote, q {
+    quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+
+
+/*******************************************
+GENERAL CSS STYLING
+********************************************/
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div#noScriptBox {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    background-color: #2e2e2e;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+div#noScriptBox p.noscript {
+    font-family: 'Merriweather', serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: red;
+}
+
+div#noScriptBox a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-decoration: none;
+    color: red;
+}
+
+div#noScriptBox a:hover {
+    color: #F19F4D;
+}
+
+
+.disable {
+    background-color: #999999; }
+
+.correct {
+    background-color: green; }
+
+.wrong {
+    background-color: red; }
+
+.wrongText {
+    color: red; }
+
+body {
+    background-color: #F2F2F2; }
+
+/*******************************************
+TYPOGRAPHY CSS STYLING
+********************************************/
+h1, h2, h3, th {
+    font-family: 'Merriweather', serif; }
+
+p, td {
+    font-family: 'Raleway', sans-serif; }
+
+/* SMARTPHONE STYLING */
+@media only screen and (max-width: 480px) {
+    div#container {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        background-color: #F5E9BE;
+        padding: 0;
+        margin: 0; 
+    }
+
+
+
+    /*******************************************
+    HEADING CSS STYLING
+    ********************************************/
+    div#heading {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 60px;
+        background-color: #2E2E2E;
+        text-align: center;
+        line-height: 30px;
+        padding: 0;
+        margin: 0;
+    }
+    div#heading h1 {
+        font-size: 1.0rem;
+        color: #fff; 
+    }
+    div#heading h1 span#toxic {
+        font-size: 1.2rem;
+        color: #F19F4D; 
+    }
+    div#heading h2#subheading {
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.8rem;
+        line-height: 1.0;
+        color: lightgreen;
+        font-style: italic; 
+    }
+
+    /*******************************************
+    Game CSS STYLING
+    ********************************************/
+    [id^="mainGame"] {
+        display: none;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border: none;
+        border: 1px solid #2e2e2e;
+        background-color: #D9D9D9;
+        padding: 0;
+        margin: 0;
+    }
+    [id^="mainGame"] div.screen {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 140px;
+        background-color: #fff;
+        padding: 5px 10px;
+        margin: 0px;
+    }   
+    [id^="mainGame"] div.screen h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        line-height: 1.5;
+        color: #336699;
+    }   
+    [id^="mainGame"] .buttonStyle {
+        display: block;
+        width: 100%;
+        height: 50px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border-top: 3px solid #2e2e2e;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-align: left;
+        padding-left: 10px;
+        margin: 0;
+    }  
+    [id^="mainGame"] [id^="scoring"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 30px;
+        border-top: 1px solid #2e2e2e;
+        background-color: #F19F4D;
+    } 
+    [id^="mainGame"] [id^="scoring"] [id^="score"] {
+        position: absolute;
+        top: 7px;
+        left: 10px;
+        font-size: 0.8rem;
+        color: #fff;
+    }   
+    [id^="mainGame"] [id^="scoring"] [id^="percent"] {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        font-size: 0.8rem;
+        color: #fff;
+    }
+    [id^="mainGame"] [id^="record"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 50px;
+        border-top: 1px solid #2e2e2e;
+        background-color: #fff;
+        padding: 0;
+    }    
+    [id^="mainGame"] [id^="record"] [id^="clock"] {
+        position: absolute;
+        top: 18px;
+        left: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: green;
+    }
+
+    [id^="mainGame"] [id^="record"] .nextBtn {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        border: none;
+        outline: none;
+        display: block;
+        width: 100%;
+        max-width: 150px;
+        height: 25px;
+        cursor: pointer;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-transform: capitalize;
+    }  
+    #myFooter {
+        clear: both;
+        display: block;
+        width: 100%;
+        height: 40px;
+        background-color: #000;
+        text-align: center;
+        margin: 0;
+    }
+    #myFooter p {
+        font-size: 1.0rem;
+        line-height: 40px;
+        color: #fff; 
+    }     
+}
+/* TABLET STYLING */
+@media only screen and (min-width: 481px) and (max-width: 977px) {
+    body {
+        background-color: #F5E9BE;
+    }
+    div#container {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #F5E9BE;
+        padding: 0;
+        margin: 0; 
+    }  
+    /*******************************************
+    HEADING CSS STYLING
+    ********************************************/
+    div#heading {
+        display: block;
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+        min-height: 125px;
+        background-color: #2E2E2E;
+        text-align: center;
+        padding: 1.250rem;
+        margin: 0 auto;
+    }
+    div#heading h1 {
+        font-size: 2.4rem;
+        color: #fff; 
+    }
+    div#heading h1 span#toxic {
+        font-size: 3.2rem;
+        color: #F19F4D; 
+    }
+    div#heading h2#subheading {
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: lightgreen;
+        font-style: italic; 
+    }
+
+    [id^="mainGame"] {
+        display: none;
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border: none;
+        background-color: #D9D9D9;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    [id^="mainGame"] div.screen {
+        display: block;
+        width: 100%;
+        height: 125px;
+        background-color: #fff;
+        padding: 20px 20px;
+        margin: 0px;
+    }
+
+    [id^="mainGame"] div.screen h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        line-height: 1.5;
+        color: #336699;
+    }
+
+    [id^="mainGame"] .buttonStyle {
+        display: block;
+        width: 100%;
+        height: 50px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border-top: 3px solid #2e2e2e;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-align: left;
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    [id^="mainGame"] .buttonStyle:hover  {
+        background-color: #000;
+    }
+
+    [id^="mainGame"] [id^="scoring"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 40px;
+        border-top: 3px solid #2e2e2e;
+        background-color: #F19F4D;
+    }
+
+    [id^="mainGame"] [id^="scoring"] [id^="score"] {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        color: #fff;
+    }
+
+    [id^="mainGame"] [id^="scoring"] [id^="percent"] {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #fff;
+    }
+
+    [id^="mainGame"] [id^="record"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 40px;
+        border-top: 3px solid #2e2e2e;
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    [id^="mainGame"] [id^="record"] [id^="clock"] {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: green;
+    }
+
+    [id^="mainGame"] [id^="record"] .nextBtn {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        border: none;
+        outline: none;
+        display: block;
+        width: 100%;
+        max-width: 150px;
+        height: 25px;
+        cursor: pointer;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-transform: capitalize;
+    }
+
+    [id^="mainGame"] [id^="record"] .nextBtn:hover {
+        background-color: green;
+        color: #fff;
+    }    
+
+    #myFooter {
+        clear: both;
+        display: block;
+        width: 600px;
+        height: 50px;
+        background-color: #000;
+        text-align: center;
+        margin: 0 auto 20px;
+    }
+    #myFooter p {
+        font-size: 1.2rem;
+        line-height: 40px;
+        color: #fff; 
+    }     
+}
+@media only screen and (min-width: 978px) {
+    div#container {
+        display: block;
+        width: 100%;
+        max-width: 978px;
+        height: 100%;
+        background-color: #F5E9BE;
+        padding: 0;
+        margin: 20px auto 0; 
+    }
+
+
+    /*******************************************
+    HEADING CSS STYLING
+    ********************************************/
+    div#heading {
+        display: block;
+        width: 100%;
+        max-width: 75.000rem;
+        height: 100%;
+        min-height: 9.375rem;
+        background-color: #2E2E2E;
+        text-align: center;
+        padding: 1.250rem;
+        margin: 0;
+    }
+    div#heading h1 {
+        font-size: 3.2rem;
+        color: #fff; }
+    div#heading h1 span#toxic {
+        font-size: 4.4rem;
+        color: #F19F4D; }
+    div#heading h2#subheading {
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: lightgreen;
+        font-style: italic; }
+    
+    form#categories-form {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: 150px;
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px auto;
+    }
+    form#categories-form label {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        line-height: 40px;
+    }
+    form#categories-form select {
+        float: left;
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+        border: none;
+        outline: none;
+        background-color: #F5E9BE;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        color: #336699;
+        text-transform: uppercase;
+    }
+    
+    input[type=submit] {
+        float: left;
+        display: inline-block;
+        outline: none;
+        border: none;
+        width: 100%;
+        max-width: 100px;
+        height: 40px;
+        cursor: pointer;
+        background-color: #2E2E2E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 10px;
+        margin: 5px 0 0 15px;
+    }
+    
+    input[type=submit]:hover {
+        background-color: #336699;
+    }
+    
+    [id^="mainGame"] {
+        display: none;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border: none;
+        background-color: #D9D9D9;
+        padding: 0;
+        margin: 20px auto;
+    }
+
+    [id^="mainGame"] div.screen {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: 175px;
+        background-color: #fff;
+        padding: 20px 10px;
+        margin: 0px;
+    }
+
+    [id^="mainGame"] div.screen h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        line-height: 1.5;
+        color: #336699;
+    }
+
+    [id^="mainGame"] .buttonStyle {
+        display: block;
+        width: 100%;
+        height: 50px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border-top: 3px solid #2e2e2e;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-align: left;
+        padding-left: 10px;
+        margin: 0;
+    }
+
+    [id^="mainGame"] .buttonStyle:hover  {
+        background-color: #000;
+    }
+
+    [id^="mainGame"] [id^="scoring"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 40px;
+        border-top: 3px solid #2e2e2e;
+        background-color: #F19F4D;
+    }
+
+    [id^="mainGame"] [id^="scoring"] [id^="score"] {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #fff;
+    }
+
+    [id^="mainGame"] [id^="scoring"] [id^="percent"] {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #fff;
+    }
+
+    [id^="mainGame"] [id^="record"] {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 40px;
+        border-top: 3px solid #2e2e2e;
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    [id^="mainGame"] [id^="record"] [id^="clock"] {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: green;
+    }
+
+    [id^="mainGame"] [id^="record"] .nextBtn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        border: none;
+        outline: none;
+        display: block;
+        width: 100%;
+        max-width: 150px;
+        height: 25px;
+        cursor: pointer;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-transform: capitalize;
+    }
+
+    [id^="mainGame"] [id^="record"] .nextBtn:hover {
+        background-color: green;
+        color: #fff;
+    }
+
+    div#info {
+        float: left;
+        display: block;
+        width: 100%;
+        max-width: 489px;
+        height: 500px;
+        background-color: lightgray;
+        padding: 20px;
+    }
+    div#info p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        font-weight: bold; }
+
+    #myFooter {
+        clear: both;
+        display: block;
+        width: 978px;
+        height: 50px;
+        background-color: #000;
+        text-align: center;
+        margin: 0 auto;
+    }
+    #myFooter p {
+        font-size: 1.2rem;
+        line-height: 40px;
+        color: #fff; } }
+
+/*# sourceMappingURL=stylesheet.css.map */
