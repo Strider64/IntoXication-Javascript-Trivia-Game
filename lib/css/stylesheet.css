@@ -48,18 +48,17 @@ table {
     border-collapse: collapse;
     border-spacing: 0; }
 
-/*  Color Theme*/
-/* 
-    Created on : Feb 16, 2016, 8:22:58 AM
-    Author     : strider64
-*/
+
+
 /*******************************************
 GENERAL CSS STYLING
 ********************************************/
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; }
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 div#noScriptBox {
     display: block;
@@ -461,7 +460,7 @@ p, td {
         margin: 20px auto 0; 
     }
 
-    
+
     /*******************************************
     HEADING CSS STYLING
     ********************************************/
@@ -489,17 +488,53 @@ p, td {
         line-height: 1.5;
         color: lightgreen;
         font-style: italic; }
-
+    
+    form#categories-form {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: 150px;
+        background-color: orange;
+        padding: 10px;
+        margin: 20px auto;
+    }
+    form#categories-form select {
+        width: 100%;
+        max-width: 500px;
+        height: 50px;
+        border: none;
+        outline: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        color: #336699;
+        text-transform: uppercase;
+    }
+    
+    input[type=submit] {
+        float: right;
+        display: block;
+        outline: none;
+        border: none;
+        width: 100px;
+        height: 40px;
+        background-color: #336699;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 10px;
+        margin: 20px 0 10px;
+    }
+    
     [id^="mainGame"] {
         display: none;
         width: 100%;
         max-width: 500px;
         height: auto;
         border: none;
-        border: 3px solid #2e2e2e;
         background-color: #D9D9D9;
         padding: 0;
-        margin: 20px;
+        margin: 20px auto;
     }
 
     [id^="mainGame"] div.screen {
