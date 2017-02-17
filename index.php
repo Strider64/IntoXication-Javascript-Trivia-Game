@@ -1,12 +1,23 @@
 <?php
 require_once 'lib/includes/utilities.inc.php';
+$categories = [];
+
+$stmt = $pdo->query('SELECT category FROM trivia_questions'); // Grab ALL the categories:
+/*
+ * Only put unique category into categories array
+ */
+while ($row = $stmt->fetch()) {
+    if (!in_array($row['category'], $categories)) {
+        array_push($categories, $row['category']);
+    }
+}
 ?>
 <!DOCTYPE html>
 <!--
-Trivia Game Version 2.02 beta with XML;
+Trivia Game Version 2.50 beta with XML;
 by John Pepp
 Started: January 31, 2017
-Revised: February 16, 2017
+Revised: February 17, 2017
 -->
 <html lang="en">
     <head>
@@ -31,8 +42,14 @@ Revised: February 16, 2017
             <form id="categories-form" action="totalRecords.php" method="post">
                 <label for="category">Select a Trivia Category</label>
                 <select id="category" name="category">
-                    <option value="movie">movie</option>
-                    <option value="space">space</option>
+                <?php
+                    /*
+                     * Only put unique categories into selection option value attribute
+                     */
+                    foreach ($categories as $category) {
+                        echo '<option value="' . $category .  '">' . $category . '</option>';
+                    }
+                ?>
                 </select>
                 <input id="submitBtn" type="submit" name="submit" value="submit">
             </form>            
