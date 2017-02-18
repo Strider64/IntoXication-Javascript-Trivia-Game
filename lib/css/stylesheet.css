@@ -159,6 +159,10 @@ p, td {
         color: lightgreen;
         font-style: italic; 
     }
+    
+    nav.nav-bar {
+        display: none;
+    }    
 
     /*******************************************
     Game CSS STYLING
@@ -371,6 +375,10 @@ p, td {
         color: lightgreen;
         font-style: italic; 
     }
+    
+    nav.nav-bar {
+        display: none;
+    }
 
     form#categories-form {
         display: block;
@@ -423,7 +431,7 @@ p, td {
     input[type=submit]:hover {
         background-color: #336699;
     }
-    
+
     [id^="mainGame"] {
         display: none;
         width: 100%;
@@ -580,18 +588,60 @@ p, td {
     }
     div#heading h1 {
         font-size: 3.2rem;
-        color: #fff; }
+        color: #fff; 
+    }
     div#heading h1 span#toxic {
         font-size: 4.4rem;
-        color: #F19F4D; }
+        color: #F19F4D; 
+    }
+
     div#heading h2#subheading {
         display: block;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1.4rem;
         line-height: 1.5;
         color: lightgreen;
-        font-style: italic; }
-    
+        font-style: italic; 
+    }
+    nav.nav-bar {
+        position: relative;
+        overflow: hidden; 
+    }
+
+    ul.topnav {
+        list-style-type: none;
+        overflow: hidden;
+        background-color: #4484CE;
+        padding-left:  30px;         
+    }
+
+    ul.topnav li {
+        float: left; 
+    }
+
+    ul li.icon {
+        display: none;
+    }
+
+    ul.topnav li a.top-link {
+        display: none;
+    }
+    ul.topnav li a {
+        display: inline-block;
+        color: #D9D9D9;
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+        transition: 0.3s;
+        padding: 14px 16px; 
+    }
+
+    ul.topnav li a:hover {
+        background-color: #2e6bb1; 
+    }
+
+
+
     form#categories-form {
         display: block;
         width: 100%;
@@ -623,7 +673,7 @@ p, td {
         color: lightgreen;
         text-transform: uppercase;
     }
-    
+
     input[type=submit] {
         float: left;
         display: inline-block;
@@ -641,11 +691,11 @@ p, td {
         padding: 10px;
         margin: 5px 0 0 15px;
     }
-    
+
     input[type=submit]:hover {
         background-color: #336699;
     }
-    
+
     [id^="mainGame"] {
         display: none;
         width: 100%;
