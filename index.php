@@ -33,6 +33,18 @@ Revised: February 17, 2017
                 <h1>Trivia<span id="toxic">IntoXication</span></h1>
                 <h2 id="subheading">Don't Drive Drunk, Play this Game Instead!</h2>
             </div>
+            <nav class="nav-bar">
+                <ul class="topnav" id="myTopnav">
+                    <li><a class="top-link" href="#" >&nbsp;</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Add Trivia</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="icon">
+                        <a href='#'>&#9776;</a>
+                    </li>    
+                </ul>
+            </nav>
             <noscript>
             <div id="noScriptBox">
                 <p class="noscript">Sorry, This quiz requires Javascript to be enabled!</p>
@@ -42,14 +54,14 @@ Revised: February 17, 2017
             <form id="categories-form" action="totalRecords.php" method="post">
                 <label for="category">Select a Trivia Category</label>
                 <select id="category" name="category">
-                <?php
+                    <?php
                     /*
                      * Only put unique categories into selection option value attribute
                      */
                     foreach ($categories as $category) {
-                        echo '<option value="' . $category .  '">' . $category . '</option>';
+                        echo '<option value="' . $category . '">' . $category . '</option>';
                     }
-                ?>
+                    ?>
                 </select>
                 <input id="submitBtn" type="submit" name="submit" value="submit">
             </form>            
