@@ -159,7 +159,7 @@ p, td {
         color: lightgreen;
         font-style: italic; 
     }
-    
+
     nav.nav-bar {
         display: none;
     }    
@@ -375,7 +375,7 @@ p, td {
         color: lightgreen;
         font-style: italic; 
     }
-    
+
     nav.nav-bar {
         display: none;
     }
@@ -641,6 +641,47 @@ p, td {
     }
 
 
+    form#add-categories-form {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: 90px;
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    form#add-categories-form select {
+        float: left;
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+        border: none;
+        outline: none;
+        background-color: #2e2e2e;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        color: lightgreen;
+        text-transform: uppercase;
+    }
+
+    form#add-categories-form input[type=submit] {
+        float: left;
+        display: inline-block;
+        outline: none;
+        border: none;
+        width: 100%;
+        max-width: 100px;
+        height: 40px;
+        cursor: pointer;
+        background-color: #2E2E2E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 10px;
+        margin: 5px 0 0 15px;
+    }
 
     form#categories-form {
         display: block;
@@ -673,8 +714,7 @@ p, td {
         color: lightgreen;
         text-transform: uppercase;
     }
-
-    input[type=submit] {
+    form#categories-form input[type=submit] {
         float: left;
         display: inline-block;
         outline: none;
@@ -809,6 +849,122 @@ p, td {
         background-color: green;
         color: #fff;
     }
+
+    form#addTrivia {
+        position: relative;
+        display: none;
+        width: 100%;
+        max-width: 620px;
+        height: auto;
+        background-color: #4484CE;
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    form#addTrivia fieldset {
+        border: 2px solid #fff;
+        padding: 20px;
+    }
+
+    form#addTrivia legend#legend {
+        font-family: 'Merriweather', serif;
+        font-size: 1.4rem;
+        color: #fff;
+        text-transform: capitalize;
+        padding: 0 5px;
+    }
+
+    form#addTrivia fieldset label#questionLabel {
+        display: block;
+        width: 100%;
+        max-width: 522px;
+        height: 40px;
+        background-color: #2E2E2E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        line-height: 40px;
+        color: #fff;
+        text-align: left;
+        padding: 0 10px;       
+    }
+
+    form#addTrivia fieldset textarea {
+        resize: none;
+        border: none;
+        outline: none;
+        clear: both;
+        display: block;
+        width: 100%;
+        max-width: 520px;
+        height: 200px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    form#addTrivia fieldset label {
+        float: left;
+        display: block;
+        width: 100%;
+        max-width: 160px;
+        height: 30px;
+        background-color: #2E2E2E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        line-height: 30px;
+        color: #fff;
+        text-align: left;
+        padding: 0 10px;
+    }
+    form#addTrivia fieldset input {
+        clear: right;
+        display: block;
+        width: 100%;
+        max-width: 360px;
+        height: 30px;
+        border: none;
+        outline: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        color: #2e2e2e;
+        padding: 0 5px;
+        margin-bottom: 10px;
+    }
+
+    form#addTrivia #prevBtn, form#addTrivia #saveBtn, form#addTrivia #nextBtn {
+        float: right;
+        outline: none;
+        border: none;
+        display: block;
+        width: 100%;
+        max-width: 120px;
+        height: 40px;
+        cursor: pointer;
+        background-color: #2e2e2e;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        color: #fff;
+        text-transform: capitalize;
+        margin-right: 15px;
+    }
+    
+    form#addTrivia #prevBtn {
+        float: left;
+    }
+    
+    form#addTrivia #saveBtn {
+        position: absolute;
+        bottom: 42px;
+        left: 50%;
+        margin-left: -60px;
+    }
+        
+    form#addTrivia #prevBtn:hover, form#addTrivia #saveBtn:hover, form#addTrivia #nextBtn:hover {
+        color: #fff;
+        background-color: #006300;
+    }
+
+
 
     div#info {
         float: left;
