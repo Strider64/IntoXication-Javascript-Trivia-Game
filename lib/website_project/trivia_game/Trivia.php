@@ -43,7 +43,18 @@ class Trivia {
     public function read($start = 0, $end = 10, $category = "movie") {
         $db = DB::getInstance();
         $pdo = $db->getConnection();
-        $this->query = "SELECT id, question, answer1, answer2, answer3, answer4, correct, category, play_date FROM trivia_questions WHERE category=:category ORDER BY id ASC LIMIT :start, :end";
+        $this->query = "SELECT id, "
+                . "question, "
+                . "answer1, "
+                . "answer2, "
+                . "answer3, "
+                . "answer4, "
+                . "correct, "
+                . "category, "
+                . "play_date "
+                . "FROM trivia_questions "
+                . "WHERE category=:category "
+                . "ORDER BY id ASC LIMIT :start, :end";
         $this->stmt = $pdo->prepare($this->query);
 
         $this->stmt->bindValue(':category', $category, PDO::PARAM_STR);
@@ -56,6 +67,31 @@ class Trivia {
         $this->quiz = $this->stmt->fetchAll(PDO::FETCH_OBJ);
 
         return $this->quiz;
+    }
+    
+    public function update(array $data) {
+        $db = DB::getInstance();
+        $pdo = $db->getConnection();
+        $this->query = "UPDATE trivia_questions "
+                . "SET "
+                . "question = :question, "
+                . "answer1 = :answer1, "
+                . "answer2 = :answer2, "
+                . "answer3 = :answer3, "
+                . "answer4 = :answer4, "
+                . "correct = :correct "
+                . "WHERE id = :id";
+        $this->stmt = $pdo->prepare($this->query);
+        $this->stmt->execute([
+            ':question' => $data['question'],
+            ':answer1' => $data['answer1'],
+            ':answer2' => $data['answer2'],
+            ':answer3' => $data['answer3'],
+            ':answer4' => $data['answer4'],
+            ':correct' => $data['correct'],
+            ':id' => $data['id']
+        ]);
+        return \TRUE;
     }
 
     public function loadQuestion($pointer = 0) {
