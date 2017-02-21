@@ -14,10 +14,10 @@ while ($row = $stmt->fetch()) {
 ?>
 <!DOCTYPE html>
 <!--
-Trivia Game Version 2.50 beta with XML;
+Trivia Game Version 2.70 beta with XML;
 by John Pepp
 Started: January 31, 2017
-Revised: February 18, 2017
+Revised: February 21, 2017
 -->
 <html lang="en">
     <head>
@@ -37,8 +37,8 @@ Revised: February 18, 2017
                 <ul class="topnav" id="myTopnav">
                     <li><a class="top-link" href="#" >&nbsp;</a></li>
                     <li><a href="index.php">Home</a></li>
+                    <li><a href="addTrivia.php">Add Trivia</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Add Trivia</a></li>
                     <li><a href="#">Contact</a></li>
                     <li class="icon">
                         <a href='#'>&#9776;</a>
