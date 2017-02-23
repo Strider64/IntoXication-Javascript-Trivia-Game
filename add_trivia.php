@@ -5,18 +5,21 @@ require_once 'lib/includes/utilities.inc.php';
 use website_project\trivia_game\Trivia;
 
 $e = [];
+$data = [];
 $trivia = new Trivia();
 
 
 $data['id'] = htmlspecialchars($_POST['id']);
+
 $data['question'] = htmlspecialchars($_POST['question']);
 $data['answer1'] = htmlspecialchars($_POST['answer1']);
 $data['answer2'] = htmlspecialchars($_POST['answer2']);
 $data['answer3'] = htmlspecialchars($_POST['answer3']);
 $data['answer4'] = htmlspecialchars($_POST['answer4']);
 $data['correct'] = htmlspecialchars($_POST['correct']);
+$data['category'] = htmlspecialchars($_POST['category']);
 
-$result = $trivia->update($data);
+$result = $trivia->create($data);
 if ($result) {
     $e['result'] = TRUE;
     $e['message'] = "Table Successfully Updated!";

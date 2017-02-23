@@ -7,11 +7,14 @@ use website_project\trivia_game\Trivia;
 $trivia = new Trivia();
 
 $category = filter_input(INPUT_POST, 'category');
-
-$data = $trivia->categories($category);
-
-output($data);
-
+$modify = filter_input(INPUT_POST, 'modify');
+if ($modify === 'edit_entry') {
+    $data = $trivia->categories($category);
+    output($data);
+} else {
+    $data = ['status' => 'new', 'category' => $category, 'total' => 0];
+    output($data);
+}
 
 
 function errorOutput($output, $code = 500) {

@@ -34,6 +34,11 @@ Revised: February 18, 2017
         <link rel="stylesheet" href="lib/css/stylesheet.css">
     </head>
     <body>
+        <div id="shadow">
+            <div class="textBox">
+                <h2>Data Successfully Saved!</h2>
+            </div>
+        </div>
         <div id="container" >
             <div id="heading">
                 <h1>Trivia<span id="toxic">IntoXication</span></h1>
@@ -52,6 +57,16 @@ Revised: February 18, 2017
                 </ul>
             </nav>
             <form id="add-categories-form" action="totalRecords.php" method="post">
+                <section id="first" class="section">
+                    <div class="radioContainer">
+                        <input type="radio" name="modify" value="new_entry" id="radio-1" checked>
+                        <label for="radio-1"><span class="radio">New Entry</span></label>
+                    </div>
+                    <div class="radioContainer">
+                        <input type="radio" name="modify" value="edit_entry" id="radio-2">
+                        <label for="radio-2"><span class="radio">Edit Entry</span></label>
+                    </div>
+                </section>
                 <select id="category" name="category">
                     <?php
                     /*
@@ -62,12 +77,13 @@ Revised: February 18, 2017
                     }
                     ?>
                 </select>
-                <input id="submitBtn" type="submit" name="submit" value="submit">
+                <input id="submitBtn" type="button" name="submit" value="submit">
             </form>     
             <form id="addTrivia" action="update_trivia.php" method="post">
                 <fieldset>
                     <legend id="legend">Add Trivia Question(s)</legend>
-                    <input id="id" type="hidden" name="id" value="">
+                    <input id="id" type="hidden" name="id" value="0">
+                    <input id="cat" type="hidden" name="category" value="">
                     <textarea id="addQuestion" name="question" tabindex="1" placeholder="Add question here..." autofocus></textarea>
                     <label for="addAnswer1">Answer 1</label>
                     <input id="addAnswer1" type="text" name="answer1" value="" tabindex="2">
@@ -80,7 +96,7 @@ Revised: February 18, 2017
                     <label for="addCorrect">Answer</label>
                     <input id="addCorrect" type="text" name="correct" value="" tabindex="6">
                     <input id="prevBtn" type="submit" name="submit" value="prev" tabindex="7">
-                    <input id="saveBtn" type="submit" name="enter" value="save" tabindex="8">
+                    <input id="saveBtn" type="button" name="enter" value="save" tabindex="8">
                     <input id="nextBtn" type="submit" name="submit" value="next" tabindex="9">
                 </fieldset>
             </form>
