@@ -561,6 +561,37 @@ p, td {
     }     
 }
 @media only screen and (min-width: 978px) {
+    div#shadow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 10000;
+    }
+    div#shadow div.textBox {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        text-align: center;
+        background-color: #fff;
+        margin-top: -150px;
+        margin-left: -150px;
+    }
+
+    div#shadow div.textBox h2 {
+        font-size: 1.4rem;
+        color: green;
+        line-height: 250px;
+    }
+
+
     div#container {
         display: block;
         width: 100%;
@@ -645,12 +676,57 @@ p, td {
         display: block;
         width: 100%;
         max-width: 500px;
-        height: 90px;
+        height: 200px;
         background-color: #fff;
         padding: 20px;
         margin: 20px auto;
     }
+    .section input[type="radio"] {
+        display: none;
+    }
+    .radioContainer {
+        margin-bottom: 15px;
+    }
+    .radioContainer label {
+        position: relative;
+        left: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: maroon; 
+    }
 
+    .radioContainer span::before,
+    .radioContainer span::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .radioContainer span.radio:hover {
+        cursor: pointer;
+    }
+    .radioContainer span.radio::before {
+        left: -52px;
+        width: 45px;
+        height: 25px;
+        background-color: #2E2E2E;
+        border-radius: 50px;
+    }
+    .radioContainer span.radio::after {
+        left: -49px;
+        width: 17px;
+        height: 17px;
+        border-radius: 10px;
+        background-color: red;
+        transition: left .25s, background-color .25s;
+    }
+    input[type="radio"]:checked + label span.radio::after {
+        left: -27px;
+        background-color: lightgreen;
+    }
+    
     form#add-categories-form select {
         float: left;
         width: 100%;
@@ -664,10 +740,9 @@ p, td {
         color: lightgreen;
         text-transform: uppercase;
     }
-
-    form#add-categories-form input[type=submit] {
+    form#add-categories-form input[type=button] {
         float: left;
-        display: inline-block;
+        display: block;
         outline: none;
         border: none;
         width: 100%;
@@ -682,6 +757,11 @@ p, td {
         padding: 10px;
         margin: 5px 0 0 15px;
     }
+
+
+
+
+
 
     form#categories-form {
         display: block;
@@ -947,18 +1027,15 @@ p, td {
         text-transform: capitalize;
         margin-right: 15px;
     }
-    
+
     form#addTrivia #prevBtn {
         float: left;
     }
-    
+
     form#addTrivia #saveBtn {
-        position: absolute;
-        bottom: 42px;
-        left: 50%;
-        margin-left: -60px;
+        float: left;
     }
-        
+
     form#addTrivia #prevBtn:hover, form#addTrivia #saveBtn:hover, form#addTrivia #nextBtn:hover {
         color: #fff;
         background-color: #006300;
