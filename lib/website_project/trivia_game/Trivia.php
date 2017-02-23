@@ -26,8 +26,25 @@ class Trivia {
         
     }
 
-    public function categories($category) {
+    public function create(array $data) {
+        $db = DB::getInstance();
+        $pdo = $db->getConnection();
+        $this->query = 'INSERT INTO trivia_questions (question, answer1, answer2, answer3, answer4, correct, category, play_date) VALUES (:question, :answer1, :answer2, :answer3, :answer4, :correct, :category, NOW())';
 
+        $this->stmt = $pdo->prepare($this->query);
+        $this->result = $this->stmt->execute([
+            ':question' => $data['question'],
+            ':answer1' => $data['answer1'],
+            ':answer2' => $data['answer2'],
+            ':answer3' => $data['answer3'],
+            ':answer4' => $data['answer4'],
+            ':correct' => $data['correct'],
+            ':category' => $data['category']
+        ]);
+        return TRUE;
+    }
+
+    public function categories($category) {
         $db = DB::getInstance();
         $pdo = $db->getConnection();
         $this->query = "SELECT count(1) FROM trivia_questions WHERE category=:category";
@@ -35,7 +52,7 @@ class Trivia {
 
         $this->stmt->execute([':category' => $category]);
         $this->count = $this->stmt->fetchColumn();
-        $this->records = ['category' => $category, 'total' => $this->count];
+        $this->records = ['status' => 'edit', 'category' => $category, 'total' => $this->count];
 
         return $this->records;
     }
@@ -43,15 +60,7 @@ class Trivia {
     public function read($start = 0, $end = 10, $category = "movie") {
         $db = DB::getInstance();
         $pdo = $db->getConnection();
-        $this->query = "SELECT id, "
-                . "question, "
-                . "answer1, "
-                . "answer2, "
-                . "answer3, "
-                . "answer4, "
-                . "correct, "
-                . "category, "
-                . "play_date "
+        $this->query = "SELECT id, question, answer1, answer2, answer3, answer4, correct, category, play_date "
                 . "FROM trivia_questions "
                 . "WHERE category=:category "
                 . "ORDER BY id ASC LIMIT :start, :end";
@@ -68,7 +77,7 @@ class Trivia {
 
         return $this->quiz;
     }
-    
+
     public function update(array $data) {
         $db = DB::getInstance();
         $pdo = $db->getConnection();
