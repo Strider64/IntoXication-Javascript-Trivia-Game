@@ -14,10 +14,10 @@ while ($row = $stmt->fetch()) {
 ?>
 <!DOCTYPE html>
 <!--
-Trivia Game Version 2.70 beta with XML;
+Trivia Game Version 2.80 beta with XML;
 by John Pepp
 Started: January 31, 2017
-Revised: February 21, 2017
+Revised: February 23, 2017
 -->
 <html lang="en">
     <head>
@@ -53,6 +53,8 @@ Revised: February 21, 2017
             </noscript>
             <form id="categories-form" action="totalRecords.php" method="post">
                 <label for="category">Select a Trivia Category</label>
+                <!-- Needed to put a hidden input in order to pull up total records -->
+                <input type="hidden" name="modify" value="edit_entry">
                 <select id="category" name="category">
                     <?php
                     /*
