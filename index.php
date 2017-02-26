@@ -51,6 +51,9 @@ Revised: February 23, 2017
                 <a href="https://www.pepster.com" title="Pepster's Place Website">https://www.pepster.com</a>
             </div>
             </noscript>
+            <div id="textContainer">
+                <div class="rotated-text"><span id="rotatedText" class="rotated-text__inner">Movie Category</span></div>
+            </div>
             <form id="categories-form" action="totalRecords.php" method="post">
                 <label for="category">Select a Trivia Category</label>
                 <!-- Needed to put a hidden input in order to pull up total records -->
