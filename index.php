@@ -17,7 +17,7 @@ while ($row = $stmt->fetch()) {
 Trivia Game Version 2.80 beta with XML;
 by John Pepp
 Started: January 31, 2017
-Revised: February 23, 2017
+Revised: February 26, 2017
 -->
 <html lang="en">
     <head>
@@ -31,7 +31,7 @@ Revised: February 23, 2017
         <div id="container" >
             <div id="heading">
                 <h1>Trivia<span id="toxic">IntoXication</span></h1>
-                <h2 id="subheading">Don't Drive Drunk, Play this Game Instead!</h2>
+                <h2 id="subheading">Dedicated to My Mom (11-29-1928 / 02-26-2017)</h2>
             </div>
             <nav class="nav-bar">
                 <ul class="topnav" id="myTopnav">
