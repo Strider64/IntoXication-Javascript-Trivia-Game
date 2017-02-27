@@ -42,7 +42,7 @@ Revised: February 18, 2017
         <div id="container" >
             <div id="heading">
                 <h1>Trivia<span id="toxic">IntoXication</span></h1>
-                <h2 id="subheading">Dedicated to My Mom (11-29-1928 / 02-26-2017)</h2>
+                <h2 id="subheading">Don't Drive Drunk! Play this Game Instead!</h2>
             </div>
             <nav class="nav-bar">
                 <ul class="topnav" id="myTopnav">
@@ -109,7 +109,7 @@ Revised: February 18, 2017
             </noscript>
         </div>
         <div id="myFooter">
-            <p>&copy;<?php echo date("Y"); ?> John R. Pepp</p>
+            <p class="footer-text">&copy;<?php echo date("Y"); ?> John R. Pepp <span>Dedicated to my mom 11-29-1928 / 02-26-2017</span></p>
         </div>
         <script src="lib/js/modify.js"></script>
     </body>
