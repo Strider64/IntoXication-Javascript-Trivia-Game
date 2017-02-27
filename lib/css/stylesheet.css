@@ -351,7 +351,11 @@ p, td {
         font-size: 1.0rem;
         line-height: 40px;
         color: #fff; 
-    }     
+    }    
+    #myFooter p span {
+        display: none;
+        color: #000;
+    }
 }
 /* TABLET STYLING */
 @media only screen and (min-width: 481px) and (max-width: 977px) {
@@ -601,9 +605,14 @@ p, td {
     }
     #myFooter p {
         font-size: 1.2rem;
-        line-height: 40px;
+        line-height: 50px;
         color: #fff; 
     }     
+    #myFooter p span {
+        float: right;
+        font-size: 0.8rem;
+        padding-right: 20px;
+    }
 }
 @media only screen and (min-width: 978px) {
     div#shadow {
@@ -1153,12 +1162,18 @@ p, td {
         width: 978px;
         height: 50px;
         background-color: #000;
-        text-align: center;
+        padding: 0 20px;
         margin: 0 auto;
     }
     #myFooter p {
         font-size: 1.2rem;
-        line-height: 40px;
-        color: #fff; } }
+        line-height: 50px;
+        color: #fff; 
+    }
+    #myFooter p span {
+        float: right;
+        font-size: 0.8rem;
+    }
+}
 
 /*# sourceMappingURL=stylesheet.css.map */
