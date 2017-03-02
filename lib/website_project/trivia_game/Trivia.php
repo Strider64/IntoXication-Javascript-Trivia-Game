@@ -63,7 +63,7 @@ class Trivia {
         $this->query = "SELECT id, question, answer1, answer2, answer3, answer4, correct, category, play_date "
                 . "FROM trivia_questions "
                 . "WHERE category=:category "
-                . "ORDER BY id ASC LIMIT :start, :end";
+                . "ORDER BY id DESC LIMIT :start, :end";
         $this->stmt = $pdo->prepare($this->query);
 
         $this->stmt->bindValue(':category', $category, PDO::PARAM_STR);
