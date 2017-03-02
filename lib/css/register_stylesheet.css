@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Raleway");
+
+/*******************************************
+TYPOGRAPHY CSS STYLING
+********************************************/
+h1, h2, h3, th {
+    font-family: 'Merriweather', serif; 
+}
+
+p, td, label {
+    font-family: 'Raleway', sans-serif; 
+}
+
+form#register {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    background-color: #fff;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+form#register fieldset {
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+form#register legend {
+    font-family: "Merriweather", serif;
+    font-size: 1.4rem;
+    padding: 0 5px;
+}
+
+form#register label {
+    float: left;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    font-size: 1.2rem;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+
+form#register input {
+    clear: right;
+    display: block;
+    width: 100%;
+    max-width: 336px;
+    height: 40px;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4484CE;
+    padding: 0 5px;
+    margin-bottom: 5px;
+}
+
+form#register input[type=submit] {
+    cursor: pointer;
+    float: right;
+    max-width: 100px;
+    text-transform: capitalize;
+    margin: 10px 0;
+}
+
+form#register input[type=submit]:hover {
+    background-color: #2E2E2E;
+}
+
+div.mainContent {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px auto;
+}
+
+div.mainContent h1 {
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+div.mainContent p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+div.mainContent a.registerAnchor {
+    display: block;
+    width: 100%;
+    max-width: 275px;
+    height: 50px;
+    background-color: #2E2E2E;
+    font-family: 'Raleway', sans-serif; 
+    font-size: 1.2rem;
+    line-height: 50px;
+    color: #f19f4d;
+    text-align: center;
+    text-decoration: none;
+    margin:  15px auto 5px;
+}
+
+div.mainContent a.registerAnchor:hover {
+    color: #fff;
+    background-color: #4484CE;    
+}
+
+form#activate {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    background-color: #2E2E2E;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+form#activate fieldset {
+    border: 2px solid #f19f4d;
+    padding: 20px;
+}
+
+form#activate legend {
+    font-size: 1.8rem;
+    color: #f19f4d;
+    padding: 0 5px;
+}
+
+form#activate label {
+    float: left;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    font-size: 1.2rem;
+    line-height: 40px;
+    text-transform: capitalize;
+    color: #f19f4d;
+}
+
+form#activate input {
+    clear: right;
+    display: block;
+    width: 100%;
+    max-width: 336px;
+    height: 40px;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #2e2e2e;
+    background-color: #fff;
+    padding: 0 5px;
+    margin-bottom: 5px;   
+}
+
+form#activate input[type=submit] {
+    cursor: pointer;
+    float: right;
+    max-width: 100px;
+    text-transform: capitalize;
+    border: 2px solid #f19f4d;
+    color: #f19f4d;
+    background-color: #2E2E2E;
+    margin: 10px 0;
+}
+
+form#activate input[type=submit]:hover {
+    border: 2px solid #fff;
+    background-color: #4484CE;
+    color: #fff;
+}
+
+form#login {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background-color: #2E2E2E;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+form#login fieldset {
+    border: 2px solid #f19f4d;
+    padding: 20px;
+}
+
+form#login legend {
+    font-size: 1.8rem;
+    color: #f19f4d;
+    padding: 0 5px;
+}
+
+form#login label {
+    float: left;
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: 30px;
+    font-size: 1.2rem;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: #f19f4d;
+}
+
+form#login input {
+    clear: right;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #2e2e2e;
+    background-color: #fff;
+    padding: 0 5px;
+    margin-bottom: 5px;   
+}
+
+form#login input[type=submit] {
+    cursor: pointer;
+    float: right;
+    max-width: 100px;
+    text-transform: capitalize;
+    border: 2px solid #f19f4d;
+    color: #f19f4d;
+    background-color: #2E2E2E;
+    margin: 10px 15px;
+}
+
+form#login input[type=submit]:hover {
+    border: 2px solid #fff;
+    background-color: #4484CE;
+    color: #fff;
+}
