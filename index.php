@@ -14,10 +14,10 @@ while ($row = $stmt->fetch()) {
 ?>
 <!DOCTYPE html>
 <!--
-Trivia Game Version 2.80 beta with XML;
+Trivia Game Version 3.01 beta with XML;
 by John Pepp
 Started: January 31, 2017
-Revised: February 26, 2017
+Revised: March 2, 2017
 -->
 <html lang="en">
     <head>
@@ -37,7 +37,15 @@ Revised: February 26, 2017
                 <ul class="topnav" id="myTopnav">
                     <li><a class="top-link" href="#" >&nbsp;</a></li>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="addTrivia.php">Add Trivia</a></li>
+                    <?php 
+                    if ( isset( $_SESSION['user']->id ) && ( $_SESSION['user']->security === 'member' || $_SESSION['user']->security === 'admin' ) )  {
+                        echo '<li><a href="addTrivia.php">Add Trivia</a></li>';
+                        echo '<li><a href="logout.php">Logout</a></li>';
+                    } else {
+                        echo '<li><a href="login.php">Login</a></li>';
+                        echo '<li><a href="register.php">Register</a></li>';
+                    }
+                    ?>                                       
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
                     <li class="icon">

@@ -1,5 +1,16 @@
 <?php
 require_once 'lib/includes/utilities.inc.php';
+include 'lib/functions/functions.inc.php';
+
+/*
+ * Make sure non-members can't access page.
+ */
+if (!isset($_SESSION['user'])) {
+    header('Location: index.php');
+    exit();
+}
+createTables();
+
 $categories = [];
 
 $stmt = $pdo->query('SELECT category FROM trivia_questions'); // Grab ALL the categories:
@@ -20,10 +31,10 @@ if (isset($submit) && $submit === 'enter') {
 ?>
 <!DOCTYPE html>
 <!--
-Trivia Game Version 2.50 beta with XML;
+Trivia Game Version 3.01 beta with XML;
 by John Pepp
 Started: January 31, 2017
-Revised: February 18, 2017
+Revised: March 2, 2017
 -->
 <html lang="en">
     <head>
@@ -49,6 +60,9 @@ Revised: February 18, 2017
                     <li><a class="top-link" href="#" >&nbsp;</a></li>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="addTrivia.php">Add Trivia</a></li>
+                    <?php
+                    echo (isset($_SESSION['user']) ? '<li><a href="logout.php">Logout</a></li>' : NULL);
+                    ?>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
                     <li class="icon">
