@@ -9,7 +9,12 @@ if (filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL) == "localhost
     error_reporting(0); // -1 = on || 0 = off
 }
 date_default_timezone_set('America/Detroit');
-
+$seconds = 60;
+$minutes = 60;
+$hours = 24;
+$days = 14;
+session_set_cookie_params($seconds * $minutes * $hours * $days, "");
+session_start();
 include 'connect/connect.php'; // Connection Variables:
 require 'lib/website_project/website_project.inc.php';
 
