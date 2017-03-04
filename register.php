@@ -38,10 +38,10 @@ if (isset($submit) && $submit === 'enter') {
 ?>
 <!DOCTYPE html>
 <!--
-Trivia Game Version 3.0 beta with XML;
+Trivia Game Version 3.0.1 beta with XML;
 by John Pepp
 Started: January 31, 2017
-Revised: February 27, 2017
+Revised: March 3, 2017
 -->
 <html lang="en">
     <head>
