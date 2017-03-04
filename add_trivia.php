@@ -18,6 +18,12 @@ $data['answer3'] = htmlspecialchars($_POST['answer3']);
 $data['answer4'] = htmlspecialchars($_POST['answer4']);
 $data['correct'] = htmlspecialchars($_POST['correct']);
 $data['category'] = htmlspecialchars($_POST['category']);
+$data['hidden'] = 'yes';
+$data['user_id'] = htmlspecialchars($_POST['user_id']);
+
+foreach ($data as $key => $value) {
+    $data[$key] = html_entity_decode($value);
+}
 
 $result = $trivia->create($data);
 if ($result) {

@@ -1,11 +1,14 @@
 <?php
 require_once 'lib/includes/utilities.inc.php';
 include 'lib/functions/functions.inc.php';
-
+//echo "<pre>" . print_r($_SESSION['user'], 1) . "</pre>\n";
 /*
  * Make sure non-members can't access page.
  */
 if (!isset($_SESSION['user'])) {
+    header('Location: index.php');
+    exit();
+} elseif (isset($_SESSION['user']) && $_SESSION['user']->security === 'public') {
     header('Location: index.php');
     exit();
 }
@@ -77,10 +80,12 @@ Revised: March 2, 2017
                         <input type="radio" name="modify" value="new_entry" id="radio-1" checked>
                         <label for="radio-1"><span class="radio">New Entry</span></label>
                     </div>
-                    <div class="radioContainer">
-                        <input type="radio" name="modify" value="edit_entry" id="radio-2">
-                        <label for="radio-2"><span class="radio">Edit Entry</span></label>
-                    </div>
+                    <?php if ($_SESSION['user']->security === 'admin') { ?>
+                        <div class="radioContainer">
+                            <input type="radio" name="modify" value="edit_entry" id="radio-2">
+                            <label for="radio-2"><span class="radio">Edit Entry</span></label>
+                        </div>
+                    <?php } ?>
                 </section>
                 <select id="category" name="category">
                     <?php
@@ -98,6 +103,7 @@ Revised: March 2, 2017
                 <fieldset>
                     <legend id="legend">Add Trivia Question(s)</legend>
                     <input id="id" type="hidden" name="id" value="0">
+                    <input type="hidden" name="user_id" value="<?php echo (isset($_SESSION['user'])) ? $_SESSION['user']->id : NULL; ?>">
                     <input id="cat" type="hidden" name="category" value="">
                     <textarea id="addQuestion" name="question" tabindex="1" placeholder="Add question here..." autofocus></textarea>
                     <label for="addAnswer1">Answer 1</label>
@@ -110,9 +116,13 @@ Revised: March 2, 2017
                     <input id="addAnswer4" type="text" name="answer4" value="" tabindex="5">   
                     <label for="addCorrect">Answer</label>
                     <input id="addCorrect" type="text" name="correct" value="" tabindex="6">
-                    <input id="prevBtn" type="submit" name="submit" value="prev" tabindex="7">
-                    <input id="saveBtn" type="button" name="enter" value="save" tabindex="8">
-                    <input id="nextBtn" type="submit" name="submit" value="next" tabindex="9">
+                    <div id="hiddenBox">
+                        <label for="hidden">Hidden</label>
+                        <input id="hidden" type="text" name="hidden" value="" tabindex="7">
+                    </div>
+                    <input id="prevBtn" type="submit" name="submit" value="prev" tabindex="8">
+                    <input id="saveBtn" type="button" name="enter" value="save" tabindex="9">
+                    <input id="nextBtn" type="submit" name="submit" value="next" tabindex="10">
                 </fieldset>
             </form>
             <noscript>

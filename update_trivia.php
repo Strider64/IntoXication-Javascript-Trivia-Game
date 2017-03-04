@@ -9,13 +9,16 @@ $trivia = new Trivia();
 
 
 $data['id'] = htmlspecialchars($_POST['id']);
+$data['hidden'] = htmlspecialchars($_POST['hidden']);
 $data['question'] = htmlspecialchars($_POST['question']);
 $data['answer1'] = htmlspecialchars($_POST['answer1']);
 $data['answer2'] = htmlspecialchars($_POST['answer2']);
 $data['answer3'] = htmlspecialchars($_POST['answer3']);
 $data['answer4'] = htmlspecialchars($_POST['answer4']);
 $data['correct'] = htmlspecialchars($_POST['correct']);
-
+foreach ($data as $key => $value) {
+    $data[$key] = html_entity_decode($value);
+}
 $result = $trivia->update($data);
 if ($result) {
     $e['result'] = TRUE;
