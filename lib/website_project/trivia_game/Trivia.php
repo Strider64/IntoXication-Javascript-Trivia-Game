@@ -29,10 +29,12 @@ class Trivia {
     public function create(array $data) {
         $db = DB::getInstance();
         $pdo = $db->getConnection();
-        $this->query = 'INSERT INTO trivia_questions (question, answer1, answer2, answer3, answer4, correct, category, play_date) VALUES (:question, :answer1, :answer2, :answer3, :answer4, :correct, :category, NOW())';
+        $this->query = 'INSERT INTO trivia_questions (user_id, hidden, question, answer1, answer2, answer3, answer4, correct, category, play_date) VALUES (:user_id, :hidden, :question, :answer1, :answer2, :answer3, :answer4, :correct, :category, NOW())';
 
         $this->stmt = $pdo->prepare($this->query);
         $this->result = $this->stmt->execute([
+            ':user_id' => $data['user_id'],
+            ':hidden' => $data['hidden'],
             ':question' => $data['question'],
             ':answer1' => $data['answer1'],
             ':answer2' => $data['answer2'],
@@ -44,23 +46,45 @@ class Trivia {
         return TRUE;
     }
 
-    public function categories($category) {
+    public function categories($category, $hidden = 'no') {
         $db = DB::getInstance();
         $pdo = $db->getConnection();
-        $this->query = "SELECT count(1) FROM trivia_questions WHERE category=:category";
+        $this->query = "SELECT count(1) FROM trivia_questions WHERE category=:category AND hidden=:hidden";
         $this->stmt = $pdo->prepare($this->query);
 
-        $this->stmt->execute([':category' => $category]);
+        $this->stmt->execute([':category' => $category, ':hidden' => $hidden]);
         $this->count = $this->stmt->fetchColumn();
         $this->records = ['status' => 'edit', 'category' => $category, 'total' => $this->count];
 
         return $this->records;
     }
 
-    public function read($start = 0, $end = 10, $category = "movie") {
+    public function read($start = 0, $end = 10, $category = "movie", $hidden = 'no') {
         $db = DB::getInstance();
         $pdo = $db->getConnection();
         $this->query = "SELECT id, question, answer1, answer2, answer3, answer4, correct, category, play_date "
+                . "FROM trivia_questions "
+                . "WHERE category=:category AND hidden=:hidden "
+                . "ORDER BY id DESC LIMIT :start, :end";
+        $this->stmt = $pdo->prepare($this->query);
+
+        $this->stmt->bindValue(':category', $category, PDO::PARAM_STR);
+        $this->stmt->bindValue(':hidden', $hidden, PDO::PARAM_STR);
+        $this->stmt->bindValue(':start', (int) $start, PDO::PARAM_INT);
+        $this->stmt->bindValue(':end', (int) $end, PDO::PARAM_INT);
+
+
+        $this->stmt->execute();
+
+        $this->quiz = $this->stmt->fetchAll(PDO::FETCH_OBJ);
+
+        return $this->quiz;
+    }
+
+    public function readAll($start = 0, $end = 0, $category = "move") {
+        $db = DB::getInstance();
+        $pdo = $db->getConnection();
+        $this->query = "SELECT id, hidden, question, answer1, answer2, answer3, answer4, correct, category, play_date "
                 . "FROM trivia_questions "
                 . "WHERE category=:category "
                 . "ORDER BY id DESC LIMIT :start, :end";
@@ -83,6 +107,7 @@ class Trivia {
         $pdo = $db->getConnection();
         $this->query = "UPDATE trivia_questions "
                 . "SET "
+                . "hidden = :hidden, "
                 . "question = :question, "
                 . "answer1 = :answer1, "
                 . "answer2 = :answer2, "
@@ -92,6 +117,7 @@ class Trivia {
                 . "WHERE id = :id";
         $this->stmt = $pdo->prepare($this->query);
         $this->stmt->execute([
+            ':hidden' => $data['hidden'],
             ':question' => $data['question'],
             ':answer1' => $data['answer1'],
             ':answer2' => $data['answer2'],
