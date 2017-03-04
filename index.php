@@ -14,7 +14,7 @@ while ($row = $stmt->fetch()) {
 ?>
 <!DOCTYPE html>
 <!--
-Trivia Game Version 3.01 beta with XML;
+Trivia Game Version 3.0.1 beta with XML;
 by John Pepp
 Started: January 31, 2017
 Revised: March 2, 2017
