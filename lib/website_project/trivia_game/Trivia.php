@@ -77,7 +77,7 @@ class Trivia {
         $this->stmt->execute();
 
         $this->quiz = $this->stmt->fetchAll(PDO::FETCH_OBJ);
-
+        shuffle($this->quiz);
         return $this->quiz;
     }
 
