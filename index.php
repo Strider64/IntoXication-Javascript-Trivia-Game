@@ -63,7 +63,7 @@ Revised: March 2, 2017
                 <div class="rotated-text"><span id="rotatedText" class="rotated-text__inner">Movie Category</span></div>
             </div>
             <form id="categories-form" action="totalRecords.php" method="post">
-                <label for="category">Select a Trivia Category</label>
+                <label for="category">Trivia Category</label>
                 <!-- Needed to put a hidden input in order to pull up total records -->
                 <input type="hidden" name="modify" value="edit_entry">
                 <select id="category" name="category">
