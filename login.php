@@ -62,7 +62,7 @@ Revised: February 27, 2017
                         <legend>Login Form</legend>
                         <input type="hidden" name="action" value="enter">
                         <label for="email">Email</label>
-                        <input id="email" type="text" name="email" value="" tabindex="1" autofocus>
+                        <input id="email" type="email" name="email" value="" tabindex="1" autofocus>
                         <label for="password">Password</label>
                         <input id="password" type="password" name="password" tabindex="2">
                         <input type="submit" name="submit" value="enter" tabindex="3">

@@ -37,8 +37,8 @@ Revised: March 2, 2017
                 <ul class="topnav" id="myTopnav">
                     <li><a class="top-link" href="#" >&nbsp;</a></li>
                     <li><a href="index.php">Home</a></li>
-                    <?php 
-                    if ( isset( $_SESSION['user']->id ) && ( $_SESSION['user']->security === 'member' || $_SESSION['user']->security === 'admin' ) )  {
+                    <?php
+                    if (isset($_SESSION['user']->id) && ( $_SESSION['user']->security === 'member' || $_SESSION['user']->security === 'admin' )) {
                         echo '<li><a href="addTrivia.php">Add Trivia</a></li>';
                         echo '<li><a href="logout.php">Logout</a></li>';
                     } else {
@@ -60,7 +60,9 @@ Revised: March 2, 2017
             </div>
             </noscript>
             <div id="textContainer">
-                <div class="rotated-text"><span id="rotatedText" class="rotated-text__inner">Movie Category</span></div>
+                <h1 id="subject">Movie Category</h1>
+                <p id="countdownClock">Time Remaining - <span class="minutes">05</span>:<span class="seconds">00</span></p>
+
             </div>
             <form id="categories-form" action="totalRecords.php" method="post">
                 <label for="category">Trivia Category</label>
